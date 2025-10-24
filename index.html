@@ -10,19 +10,24 @@
 <body>
   <!-- ===== NAVBAR ===== -->
   <header>
-    <div class="navbar">
-      <a href="#hero" class="logo">
-        <img src="assets/kaizen.png" alt="Kaizen J Consulting Logo" />
-        Kaizen J Consulting LLC
-      </a>
-      <nav class="nav-links" id="navMenu">
-        <a href="#about">About</a>
-        <a href="#divisions">Divisions</a>
-        <a href="#partnerships">Partnerships</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <div class="navbar">
+    <a href="#hero" class="logo">
+      <img src="assets/kaizen.png" alt="Kaizen J Consulting Logo" />
+      Kaizen J Consulting LLC
+    </a>
+
+    <!-- Hamburger Menu -->
+    <div class="menu-toggle" id="menuToggle">☰</div>
+
+    <nav class="nav-links" id="navMenu">
+      <a href="#about">About</a>
+      <a href="#divisions">Divisions</a>
+      <a href="#partnerships">Partnerships</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+v c
 
   <!-- ===== HERO SECTION ===== -->
   <section id="hero" class="hero clean-hero" style="background-image:url('assets/business.jpg');">
@@ -493,14 +498,33 @@
 </div>
 
 <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>© 2025 Kaizen J Consulting LLC | All Rights Reserved | <a href="mailto:info@kaizenjconsulting.com">info@kaizenjconsulting.com</a></p>
-  </footer>
+<footer>
+  <p>© 2025 Kaizen J Consulting LLC | All Rights Reserved | 
+    <a href="mailto:info@kaizenjconsulting.com">info@kaizenjconsulting.com</a>
+  </p>
+</footer>
 
-
-  <!-- ===== SIMPLE FORM JS ===== -->
- <script>
+<!-- ===== COMBINED SITE JS ===== -->
+<script>
 document.addEventListener("DOMContentLoaded", function() {
+  /* === MOBILE MENU TOGGLE === */
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+
+    // Auto close menu when a nav link is clicked
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+      });
+    });
+  }
+
+  /* === MODAL FUNCTIONALITY === */
   const modals = document.querySelectorAll(".modal");
   const openButtons = document.querySelectorAll("[data-modal]");
   const closeButtons = document.querySelectorAll(".modal .close");
@@ -527,7 +551,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  // Close modal when clicking outside box
+  // Close modal when clicking outside
   window.addEventListener("click", e => {
     modals.forEach(modal => {
       if (e.target === modal) {
@@ -537,17 +561,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  // ✨ NEW FEATURE: Make buttons inside modals go to contact section
+  // Buttons inside modals go to contact section
   const modalCtaButtons = document.querySelectorAll(".modal-content a.btn-gradient, .modal-content a.btn-gold");
   modalCtaButtons.forEach(button => {
     button.addEventListener("click", e => {
       e.preventDefault();
-
-      // Close all modals
       modals.forEach(m => (m.style.display = "none"));
       body.style.overflow = "auto";
-
-      // Smooth scroll to contact section
       const contactSection = document.querySelector("#contact");
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: "smooth" });
