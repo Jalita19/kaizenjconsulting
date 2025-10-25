@@ -43,6 +43,7 @@ window.addEventListener('load', revealDivisions);
 /* ===============================
    📬 NETLIFY CONTACT FORM HANDLER
 =============================== */
+/* 
 const contactForm = document.querySelector('form[name="contact"]');
 const successMsg = document.getElementById('form-success');
 
@@ -66,3 +67,4 @@ if (contactForm) {
       .catch(() => alert('⚠️ There was an error. Please try again.'));
   });
 }
+*/
