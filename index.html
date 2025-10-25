@@ -192,42 +192,53 @@ v c
     </p>
 
     <!-- Netlify Form -->
-    <form name="contact" method="POST" data-netlify="true" class="contact-form">
-      <input type="hidden" name="form-name" value="contact" />
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="contact-form">
+  <!-- Required hidden input for Netlify form handling -->
+  <input type="hidden" name="form-name" value="contact" />
+  
+  <!-- Hidden spam trap (honeypot) -->
+  <p style="display:none;">
+    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+  </p>
 
-      <div class="form-row">
-        <div class="form-group half">
-          <input type="text" name="name" placeholder="Full Name" required />
-        </div>
-        <div class="form-group half">
-          <input type="email" name="email" placeholder="Email Address" required />
-        </div>
-      </div>
+  <div class="form-row">
+    <div class="form-group half">
+      <input type="text" name="name" placeholder="Full Name" required />
+    </div>
+    <div class="form-group half">
+      <input type="email" name="email" placeholder="Email Address" required />
+    </div>
+  </div>
 
-      <div class="form-group">
-        <input type="tel" name="phone" placeholder="Phone Number (optional)" />
-      </div>
+  <div class="form-group">
+    <input type="tel" name="phone" placeholder="Phone Number (optional)" />
+  </div>
 
-      <div class="form-group">
-        <select name="inquiry" required>
-          <option value="">Select Inquiry Type</option>
-          <option value="it">💻 IT Support & Web Development</option>
-          <option value="staffing">👥 Workforce Staffing</option>
-          <option value="homecare">🏡 Home Care & Support Services</option>
-          <option value="consulting">📈 Business Consulting & Strategy</option>
-          <option value="partnerships">🤝 Partnership Opportunities</option>
-          <option value="other">📬 General Inquiry</option>
-        </select>
-      </div>
+  <div class="form-group">
+    <select name="inquiry" required>
+      <option value="">Select Inquiry Type</option>
+      <option value="it">💻 IT Support & Web Development</option>
+      <option value="staffing">👥 Workforce Staffing</option>
+      <option value="homecare">🏡 Home Care & Support Services</option>
+      <option value="consulting">📈 Business Consulting & Strategy</option>
+      <option value="partnerships">🤝 Partnership Opportunities</option>
+      <option value="other">📬 General Inquiry</option>
+    </select>
+  </div>
 
-      <div class="form-group">
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      </div>
+  <div class="form-group">
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  </div>
 
-      <div class="form-group center">
-        <button type="submit" class="btn btn-gold">Send Message</button>
-      </div>
-    </form>
+  <div class="form-group center">
+    <button type="submit" class="btn btn-gold">Send Message</button>
+  </div>
+
+  <!-- ✅ SUCCESS MESSAGE -->
+  <div id="form-success">✅ Thank you! Your message has been sent successfully.</div>
+</form>
+
+
 
     <!-- ===== CONTACT INFO BLOCK ===== -->
     <div class="contact-details">

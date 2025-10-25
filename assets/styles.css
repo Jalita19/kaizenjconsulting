@@ -1048,18 +1048,19 @@ button.btn-gold:hover {
 }
 
 /* ===== SUCCESS MESSAGE ===== */
-.success-msg {
-  margin-top: 1.8rem;
-  color: #0a6d2c;
-  font-weight: 600;
-  font-size: 1.05rem;
-  text-align: center;
-  background: #e6f5ea;
+#form-success {
+  display: none;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 1rem 1.5rem;
   border-radius: 10px;
-  padding: 0.8rem 1rem;
-  display: inline-block;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  animation: fadeUp 0.6s ease forwards;
 }
+
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
