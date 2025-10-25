@@ -134,27 +134,37 @@ header {
   margin-bottom: 2rem;
 }
 
+/* ===== HERO BUTTON FIX — Equal Size ===== */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .actions .btn {
-  display: inline-block;
-  padding: 12px 28px;
-  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;         /* 🔹 Ensures both are equal width */
+  height: 52px;             /* 🔹 Fixed height */
+  padding: 0 30px;          /* 🔹 Even inner spacing */
   border-radius: 30px;
   font-weight: 600;
+  font-size: 1rem;
+  background-color: var(--gold);
+  color: var(--navy);
+  border: none;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.btn-gold {
-  background-color: var(--gold);
-  color: var(--navy);
-}
-.btn-gold:hover { background-color: var(--navy); color: #fff; }
-
-.btn-outline {
-  border: 2px solid var(--gold);
+.actions .btn:hover {
+  background-color: var(--navy);
   color: #fff;
+  transform: translateY(-2px);
 }
-.btn-outline:hover { background-color: var(--gold); color: var(--navy); }
+
 
 /* ===== ABOUT SECTION (Alternating Layout) ===== */
 .about-section {
@@ -329,7 +339,7 @@ header {
   line-height: 1.7;
 }
 
-/* ===== DIVISION CARDS ===== */
+
 /* ===== DIVISIONS SECTION ===== */
 .divisions-section {
   background: linear-gradient(180deg, #FAF6EF 0%, #F1E8D9 100%);
@@ -756,7 +766,7 @@ header {
   margin-bottom: 2.2rem;
 }
 
-/* ===== CONTACT SECTION ===== */
+
 /* ===== CONTACT SECTION ===== */
 .contact-section {
   background: #fffaf3;
