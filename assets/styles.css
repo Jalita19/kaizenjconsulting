@@ -180,60 +180,61 @@ header {
 }
 
 
-/* ===== HERO MOBILE/TABLET FIX (no layout changes) ===== */
+/* ===== HERO MOBILE/TABLET SIZE FIX (Compact Layout) ===== */
 @media (max-width: 1024px) {
   .hero.clean-hero {
-    height: auto;              /* let it size naturally */
-    min-height: 80vh;          /* still fills the screen nicely */
-    background-attachment: scroll; /* prevents image zoom cutoff */
+    height: auto;
+    min-height: 70vh; /* 🔹 smaller height for tablets */
+    background-attachment: scroll;
     background-position: center top;
-    padding: 90px 20px 70px;   /* balances top & bottom spacing */
+    padding: 70px 20px 50px; /* 🔹 less padding */
     display: flex;
-    align-items: flex-start;   /* move text slightly higher */
+    align-items: center;
     justify-content: center;
   }
 
   .hero-inner {
-    max-width: 90%;
-    margin-top: 60px;
+    max-width: 88%;
+    margin-top: 30px;
   }
 
   .hero h1.display {
-    font-size: 2.2rem;
-    line-height: 1.3;
+    font-size: 2rem;
+    line-height: 1.25;
+    margin-bottom: 1rem;
   }
 
   .hero p.lead {
-    font-size: 1.1rem;
-    margin-bottom: 1.8rem;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
   }
 
   .actions {
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.6rem;
   }
 
   .actions .btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 260px;
   }
 }
 
 @media (max-width: 600px) {
   .hero.clean-hero {
     height: auto;
-    min-height: 75vh;
+    min-height: 60vh; /* 🔹 more compact for phones */
     background-attachment: scroll;
     background-position: center top;
-    padding: 100px 15px 60px;
+    padding: 80px 15px 40px;
   }
 
   .hero-inner {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 
   .hero h1.display {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .hero p.lead {
@@ -241,13 +242,11 @@ header {
   }
 
   .actions {
-    flex-direction: column;
     gap: 10px;
   }
 
   .actions .btn {
-    width: 100%;
-    max-width: 260px;
+    max-width: 240px;
   }
 }
 
