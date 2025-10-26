@@ -166,6 +166,92 @@ header {
 }
 
 
+/* ===== NAVBAR SPACING FIX (Prevents Hero Overlap on Mobile) ===== */
+@media (max-width: 1024px) {
+  body {
+    padding-top: 80px; /* Adjust based on your navbar height */
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 90px; /* Slightly more padding for smaller screens */
+  }
+}
+
+
+/* ===== HERO MOBILE/TABLET FIX (no layout changes) ===== */
+@media (max-width: 1024px) {
+  .hero.clean-hero {
+    height: auto;              /* let it size naturally */
+    min-height: 80vh;          /* still fills the screen nicely */
+    background-attachment: scroll; /* prevents image zoom cutoff */
+    background-position: center top;
+    padding: 90px 20px 70px;   /* balances top & bottom spacing */
+    display: flex;
+    align-items: flex-start;   /* move text slightly higher */
+    justify-content: center;
+  }
+
+  .hero-inner {
+    max-width: 90%;
+    margin-top: 60px;
+  }
+
+  .hero h1.display {
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+
+  .hero p.lead {
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .actions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero.clean-hero {
+    height: auto;
+    min-height: 75vh;
+    background-attachment: scroll;
+    background-position: center top;
+    padding: 100px 15px 60px;
+  }
+
+  .hero-inner {
+    margin-top: 50px;
+  }
+
+  .hero h1.display {
+    font-size: 1.8rem;
+  }
+
+  .hero p.lead {
+    font-size: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .actions .btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+
 /* ===== ABOUT SECTION (Alternating Layout) ===== */
 .about-section {
   background: linear-gradient(180deg, #FAF6EF 0%, #FFFDF8 100%);
